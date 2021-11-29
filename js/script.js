@@ -36,9 +36,9 @@ const fruits = ['mandarino', 'mela', 'banana', 'arancia', 'kiwi', 'melograno', '
 //trasformazione in while
 //girare finche find e false
 // e finche non sono all'ultimo elemento
-let find = false;
-let i = 0;
-console.log(find == false); //confronto e true, quando questa e false devo bloccare il ciclo
+// let find = false;
+// let i = 0;
+// console.log(find == false); //confronto e true, quando questa e false devo bloccare il ciclo
 
 //true && true //entrambe devono essere vere per risultare vere
 //true || true // anche se una delle due e falsa risulta vera, solo se sono entrambe false si rompe
@@ -91,41 +91,86 @@ console.log(find == false); //confronto e true, quando questa e false devo blocc
 
 
 
-const list = [
-  'Latte',
-  'Cacao',
-  'Insalata',
-  'Carote',
-  'Pomodori',
-  'Piatti pronti'
-];
+// const list = [
+//   'Latte',
+//   'Cacao',
+//   'Insalata',
+//   'Carote',
+//   'Pomodori',
+//   'Piatti pronti'
+// ];
 
-const container = document.querySelector('.container');
+// const container = document.querySelector('.container');
 
-//stampiamo con un ciclo while gli elementi in pagina
+// //stampiamo con un ciclo while gli elementi in pagina
 
-let index = 0;
-while (index < list.length) {
-  // console.log(list[index]);
-  const li = document.createElement('li');
-  li.innerHTML = list[index];
-  container.append(li);
-  index++;
-}
+// let index = 0;
+// while (index < list.length) {
+//   // console.log(list[index]);
+//   const li = document.createElement('li');
+//   li.innerHTML = list[index];
+//   container.append(li);
+//   index++;
+// }
+
+
+// // array 10 elementi con numeri random ma non identici
+// const numbers = [];
+// for (let i = 0; i < 10; i++) {
+//   const number = Math.floor(Math.random() * 20) + 1; //numero random da 1 a 20
+//   //allora lo pusho
+//   // for su numbers e valuta se c'e elemento o meno e restituisce un boolean
+//   if (!numbers.includes(number)) { //se number non e dentro numbers
+//     numbers.push(number);
+//   } else {
+//     //nulla
+//   }
+// }
+
+// //puo generare un array piu piccolo 
+// console.log(numbers);
+
+
+//chiediamo all'utente di inserire un numero
+//finche non scrive un numero continuo a chiedere
+
+// let number;
+// do { //avviene almeno una volta
+//   number = parseInt(prompt('Inserisci un numero'));
+// } while (isNaN(number));
+// // //true = continua a ciclare inserisco una lettera isNaN(lettera)
+// // //false = si blocca isNaN(numero) 
+
+// let number = parseInt(prompt('Inserisci un numero'));
+// while (isNaN(number)) {
+//   number = parseInt(prompt('Inserisci un numero'));
+// }
 
 
 // array 10 elementi con numeri random ma non identici
-const numbers = [];
-for (let i = 0; i < 10; i++) {
-  const number = Math.floor(Math.random() * 20) + 1; //numero random da 1 a 20
-  //allora lo pusho
-  // for su numbers e valuta se c'e elemento o meno e restituisce un boolean
-  if (!numbers.includes(number)) { //se number non e dentro numbers
-    numbers.push(number);
-  } else {
-    //nulla
-  }
-}
+// const numbers = [];
+// for (let i = 0; i < 10; i++) {
+//   const number = Math.floor(Math.random() * 20) + 1; //numero random da 1 a 20
+//   //allora lo pusho
+//   // for su numbers e valuta se c'e elemento o meno e restituisce un boolean
+//   if (numbers.includes(number) == false) { //se number non e dentro numbers
+//     numbers.push(number);
+//   } else {
+//     console.log('numero gia esistente');
+//   }
+// }
 
-//puo generare un array piu piccolo 
-console.log(numbers);
+// //puo generare un array piu piccolo 
+// console.log(numbers);
+
+// creare 10 numeri e devono essere unici
+const numbers = [];
+
+while (numbers.length < 10) {
+  const number = Math.floor(Math.random() * 20) + 1; //numero random da 1 a 20
+  console.log('numero generato', number);
+  if (numbers.includes(number) == false) { //pushare solo se l'elemento non e esistente
+    numbers.push(number);
+  }
+  console.log(numbers.length);
+}
